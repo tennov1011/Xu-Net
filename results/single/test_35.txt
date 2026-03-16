@@ -1,0 +1,15 @@
+============================================================
+SINGLE IMAGE TEST RESULTS - ./results\single\test_35.txt
+============================================================
+Checkpoint  : ./checkpoints/res128_bpp_interleave/net_20.pt
+Image path  : image32799_stego0.2.png
+Color mode  : RGB
+Image size  : 128x128
+
+============================================================
+Predicted Class : Cover
+Confidence      : 99.93%
+
+Probability Distribution:
+  Cover : 99.93%
+  Stego : 0.07%

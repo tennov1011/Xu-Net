@@ -1,0 +1,25 @@
+==================================================
+TEST RESULTS - ./results\res128\test_13.txt
+==================================================
+Resolution      : res128
+Checkpoint      : ./checkpoints/res128_bpp_interleave/net_3.pt
+Cover path      : ./dataset/res128/cover/test
+Stego path      : ./dataset/res128/stego/test
+Test size       : 1500
+Batch size      : 32
+Color mode      : RGB
+Device          : cpu
+
+==================================================
+Test Accuracy   : 96.80%
+==================================================
+
+Confusion Matrix:
+True Positive  (Stego->Stego) : 1434
+True Negative  (Cover->Cover) : 1470
+False Positive (Cover->Stego) : 30
+False Negative (Stego->Cover) : 66
+
+Accuracy  : 96.80%
+Precision : 97.95%
+Recall    : 95.60%

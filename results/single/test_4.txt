@@ -1,0 +1,15 @@
+============================================================
+SINGLE IMAGE TEST RESULTS - ./results\single\test_4.txt
+============================================================
+Checkpoint  : ./checkpoints/res128/net_3.pt
+Image path  : test_10.png
+Color mode  : RGB
+Image size  : 128x128
+
+============================================================
+Predicted Class : Cover
+Confidence      : 99.97%
+
+Probability Distribution:
+  Cover : 99.97%
+  Stego : 0.03%

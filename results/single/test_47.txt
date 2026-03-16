@@ -1,0 +1,15 @@
+============================================================
+SINGLE IMAGE TEST RESULTS - ./results\single\test_47.txt
+============================================================
+Checkpoint  : ./checkpoints/res128_bpp/net_1.pt
+Image path  : image32799_stego2236.png
+Color mode  : RGB
+Image size  : 128x128
+
+============================================================
+Predicted Class : Stego
+Confidence      : 100.00%
+
+Probability Distribution:
+  Cover : 0.00%
+  Stego : 100.00%

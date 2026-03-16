@@ -1,0 +1,25 @@
+testing dalam folder :
+python test.py --checkpoint ./checkpoints/res128/net_100.pt --test_cover_path ./dataset/res128/test/cover --test_stego_path ./dataset/res128/test/stego --test_size 1500 --batch_size 32 --color_mode RGB
+
+testing per gambar : 
+python test_single_image.py --checkpoint ./checkpoints/res128/net_100.pt --image_path .png --color_mode RGB
+
+train
+128
+python train.py --cover_path "./dataset/res128/cover/train" --stego_path "./dataset/res128/stego/train" --valid_cover_path "./dataset/res128/cover/validation" --valid_stego_path "./dataset/res128/stego/validation" --checkpoints_dir "./checkpoints/res128" --file_extension ".png" --color_mode "RGB" --train_size 7000 --val_size 1500 --batch_size 32 --num_epochs 350 --lr 0.001
+
+256
+python train.py --cover_path "./dataset/res256/cover/train" --stego_path "./dataset/res256/stego/train" --valid_cover_path "./dataset/res256/cover/validation" --valid_stego_path "./dataset/res256/stego/validation" --checkpoints_dir "./checkpoints/res256" --file_extension ".png" --color_mode "RGB" --train_size 7000 --val_size 1500 --batch_size 16 --num_epochs 35 --lr 0.001
+
+512
+python train.py --cover_path "./dataset/res512/cover/train" --stego_path "./dataset/res512/stego/train" --valid_cover_path "./dataset/res512/cover/validation" --valid_stego_path "./dataset/res512/stego/validation" --checkpoints_dir "./checkpoints/res512" --file_extension ".png" --color_mode "RGB" --train_size 7000 --val_size 1500 --batch_size 8 --num_epochs 35 --lr 0.001
+
+1024
+python train.py --cover_path "./dataset/res1024/cover/train" --stego_path "./dataset/res1024/stego/train" --valid_cover_path "./dataset/res1024/cover/validation" --valid_stego_path "./dataset/res1024/stego/validation" --checkpoints_dir "./checkpoints/res1024" --file_extension ".png" --color_mode "RGB" --train_size 7000 --val_size 1500 --batch_size 2 --num_epochs 35 --lr 0.001
+
+checkpoint yang memenuhi aspek undetectability : 
+1. res128_bpp/net_1.pt - image32799_stego0.3.png
+2. res128_bpp/net_4.pt - image32799_stego0.4.png
+3. 
+
+
