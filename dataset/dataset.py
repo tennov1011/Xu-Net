@@ -9,10 +9,6 @@ from torch.utils.data import Dataset
 from PIL import Image
 
 import imageio.v2 as io # Menggunakan v2 untuk menghindari warning
-
-from opts.options import arguments
-
-opt = arguments()
 # pylint: disable=E1101
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # pylint: enable=E1101
@@ -42,7 +38,7 @@ class DatasetLoad(Dataset):
         self.file_extension = file_extension
         self.color_mode = color_mode  # 'RGB' or 'L' (grayscale)
 
-        # --- PERBAIKAN UTAMA: Membaca nama file secara dinamis ---
+        # --- Membaca nama file secara dinamis ---
         # Mengambil semua file di folder cover yang sesuai ekstensi
         all_files = sorted([
             f for f in os.listdir(cover_path) 
@@ -65,7 +61,7 @@ class DatasetLoad(Dataset):
     def __getitem__(self, index: int) -> dict:
         """Returns item at index."""
         
-        # --- PERBAIKAN UTAMA: Menggunakan nama file asli dari list ---
+        # ---Menggunakan nama file asli dari list ---
         img_name = self.image_filenames[index]
         
         cover_path = os.path.join(self.cover, img_name)

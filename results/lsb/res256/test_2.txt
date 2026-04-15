@@ -1,0 +1,25 @@
+==================================================
+TEST RESULTS - ./results\lsb\res256\test_2.txt
+==================================================
+Resolution      : res256
+Checkpoint      : ./checkpoints/res256\net_2.pt
+Cover path      : ./dataset/lsb/res256/cover/test
+Stego path      : ./dataset/lsb/res256/stego/test
+Test size       : 40
+Batch size      : 10
+Color mode      : RGB
+Device          : cpu
+
+==================================================
+Test Accuracy   : 72.50%
+==================================================
+
+Confusion Matrix:
+True Positive  (Stego->Stego) : 39
+True Negative  (Cover->Cover) : 19
+False Positive (Cover->Stego) : 21
+False Negative (Stego->Cover) : 1
+
+Accuracy  : 72.50%
+Precision : 65.00%
+Recall    : 97.50%

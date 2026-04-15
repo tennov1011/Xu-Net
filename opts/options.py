@@ -72,6 +72,11 @@ def arguments() -> str:
     parser.add_argument("--val_size", type=int, default=1500, help="Number of validation image pairs")
     parser.add_argument("--test_size", type=int, default=1500, help="Number of test image pairs")
     parser.add_argument("--lr", type=float, default=0.001, help="Initial learning rate")
+    parser.add_argument(
+        "--stego_only",
+        action="store_true",
+        help="Evaluate only stego images (used by test.py)"
+    )
 
 
     opt = parser.parse_args()

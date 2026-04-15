@@ -1,0 +1,25 @@
+==================================================
+TEST RESULTS - ./results\hybrid\res256\test_4.txt
+==================================================
+Resolution      : res256
+Checkpoint      : ./checkpoints/res256\net_4.pt
+Cover path      : ./dataset/hybrid/res256/cover/test
+Stego path      : ./dataset/hybrid/res256/stego/test
+Test size       : 40
+Batch size      : 10
+Color mode      : RGB
+Device          : cpu
+
+==================================================
+Test Accuracy   : 66.25%
+==================================================
+
+Confusion Matrix:
+True Positive  (Stego->Stego) : 15
+True Negative  (Cover->Cover) : 38
+False Positive (Cover->Stego) : 2
+False Negative (Stego->Cover) : 25
+
+Accuracy  : 66.25%
+Precision : 88.24%
+Recall    : 37.50%

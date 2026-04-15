@@ -3,6 +3,49 @@ import os
 from pathlib import Path
 import shutil
 
+
+def remove_stego_from_filenames(folder_path):
+    """Remove '_stego' from all PNG filenames in a specific folder."""
+    folder = Path(folder_path)
+    if not folder.exists():
+        print(f"Folder not found: {folder}")
+        return
+
+    png_files = sorted(folder.glob("*.png"))
+    targets = [f for f in png_files if "_stego" in f.stem]
+
+    if not targets:
+        print("No files with '_stego' found.")
+        return
+
+    print(f"Processing folder: {folder}")
+    print(f"Found {len(targets)} files containing '_stego'")
+
+    temp_dir = folder / "_temp_remove_stego"
+    temp_dir.mkdir(exist_ok=True)
+
+    # Copy to temp with new names first to avoid name collisions.
+    for idx, old_file in enumerate(targets, start=1):
+        new_stem = old_file.stem.replace("_stego", "")
+        new_name = f"{new_stem}{old_file.suffix}"
+        dst = temp_dir / new_name
+
+        if dst.exists() or (folder / new_name).exists():
+            print(f"Skipped (name exists): {old_file.name} -> {new_name}")
+            continue
+
+        shutil.copy2(old_file, dst)
+        old_file.unlink()
+
+        if idx % 500 == 0 or idx == len(targets):
+            print(f"Processed {idx}/{len(targets)} files...")
+
+    for new_file in temp_dir.glob("*.png"):
+        shutil.move(str(new_file), folder)
+
+    temp_dir.rmdir()
+    print("Done removing '_stego' from filenames.")
+
 def rename_with_prefix(folder_path, split):
     """Rename files in folder by adding split prefix: 1.png -> {split}_1.png"""
     # Only process files that have NOT already been prefixed
@@ -88,5 +131,5 @@ def rename_all_datasets(base_path):
     print("="*60)
 
 if __name__ == "__main__":
-    rename_all_datasets("./dataset")
+    remove_stego_from_filenames("./dataset/lsb/res128/stego/test")
 

@@ -1,0 +1,25 @@
+==================================================
+TEST RESULTS - ./results\lsb\res512\test_26.txt
+==================================================
+Resolution      : res512
+Checkpoint      : ./checkpoints/res512\net_26.pt
+Cover path      : ./dataset/lsb/res512/cover/test
+Stego path      : ./dataset/lsb/res512/stego/test
+Test size       : 40
+Batch size      : 10
+Color mode      : RGB
+Device          : cpu
+
+==================================================
+Test Accuracy   : 90.00%
+==================================================
+
+Confusion Matrix:
+True Positive  (Stego->Stego) : 40
+True Negative  (Cover->Cover) : 32
+False Positive (Cover->Stego) : 8
+False Negative (Stego->Cover) : 0
+
+Accuracy  : 90.00%
+Precision : 83.33%
+Recall    : 100.00%

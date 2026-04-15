@@ -70,15 +70,6 @@ class ImageProcessing(nn.Module):
 
 
 class ConvBlock(nn.Module):
-    """Building block for XuNet following the exact architecture from the paper.
-    
-    Architecture order:
-    - Convolution
-    - Absolute value (only for Group 1)
-    - Batch Normalization
-    - Activation (TanH or ReLU)
-    - Average Pooling
-    """
 
     def __init__(
         self,
@@ -88,15 +79,7 @@ class ConvBlock(nn.Module):
         activation: str = "relu",
         use_abs: bool = False,
     ) -> None:
-        """Constructor
-        
-        Args:
-            in_channels: Number of input channels
-            out_channels: Number of output channels
-            kernel_size: Convolution kernel size (5 or 1)
-            activation: Activation function ('tanh' or 'relu')
-            use_abs: Whether to apply absolute value after convolution (Group 1 only)
-        """
+
         super().__init__()
 
         if kernel_size == 5:
@@ -152,23 +135,6 @@ class ConvBlock(nn.Module):
 
 
 class XuNet(nn.Module):
-    """XuNet model for steganalysis following the original paper architecture.
-    
-    Reference: Xu, G., Wu, H. Z., & Shi, Y. Q. (2016). 
-    Structural design of convolutional neural networks for steganalysis. 
-    IEEE Signal Processing Letters, 23(5), 708-712.
-    
-    Architecture:
-    - HPF: High-pass filter (KV filter) preprocessing
-    - Group 1: Conv 8×(5×5) → ABS → BN → TanH → Pool
-    - Group 2: Conv 16×(5×5) → BN → TanH → Pool
-    - Group 3: Conv 32×(1×1) → BN → ReLU → Pool
-    - Group 4: Conv 64×(1×1) → BN → ReLU → Pool
-    - Group 5: Conv 128×(1×1) → BN → ReLU → Pool
-    - Global Average Pooling
-    - Fully Connected: 128 → 2
-    - Softmax for classification
-    """
 
     def __init__(self, in_channels: int = 3) -> None:
         """Constructor

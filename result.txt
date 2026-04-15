@@ -1,0 +1,62 @@
+hybrid 
+128 	= 
+net_3
+==================================================
+Test Accuracy   : 56.25%
+==================================================
+
+Confusion Matrix:
+True Positive  (Stego->Stego) : 26
+True Negative  (Cover->Cover) : 19
+False Positive (Cover->Stego) : 21
+False Negative (Stego->Cover) : 14
+
+Accuracy  : 56.25%
+Precision : 55.32%
+Recall    : 65.00%
+
+
+256 	   = 
+net_
+
+
+
+512	        =
+net_45
+==================================================
+Test Accuracy: 68.75%
+==================================================
+
+Confusion Matrix:
+True Positive (Stego→Stego):   23
+True Negative (Cover→Cover):   32
+False Positive (Cover→Stego):  8
+False Negative (Stego→Cover):  17
+
+Accuracy: 68.75%
+Precision: 74.19%
+Recall: 57.50%
+
+1024	= 
+net_23
+==================================================
+Test Accuracy: 55.00%
+==================================================
+
+Confusion Matrix:
+True Positive (Stego→Stego):   6
+True Negative (Cover→Cover):   38
+False Positive (Cover→Stego):  2
+False Negative (Stego→Cover):  34
+
+Accuracy: 55.00%
+Precision: 75.00%
+Recall: 15.00%
+
+
+
+lsb
+128
+256
+512
+1024

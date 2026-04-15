@@ -120,7 +120,7 @@ def setup_logging(checkpoint_dir):
 def create_checkpoint_dir(checkpoint_dir):
     """Create checkpoint directory if it doesn't exist."""
     os.makedirs(checkpoint_dir, exist_ok=True)
-    print(f"✅ Checkpoint directory: {checkpoint_dir}")
+    print(f" Checkpoint directory: {checkpoint_dir}")
 
 def find_latest_checkpoint(checkpoint_dir):
     """Find the latest checkpoint in the directory."""
@@ -145,14 +145,14 @@ def load_checkpoint(checkpoint_path, model, optimizer):
         print("No checkpoints found! Starting training from scratch...")
         return 0
     
-    print(f"✅ Found checkpoint: {checkpoint_path}")
+    print(f" Found checkpoint: {checkpoint_path}")
     checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     
     model.load_state_dict(checkpoint['model_state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
     start_epoch = checkpoint['epoch']
     
-    print(f"✅ Resuming training from epoch {start_epoch + 1}")
+    print(f" Resuming training from epoch {start_epoch + 1}")
     print(f"   Previous train loss: {checkpoint.get('train_loss', 'N/A'):.5f}")
     print(f"   Previous valid loss: {checkpoint.get('valid_loss', 'N/A'):.5f}")
     print(f"   Previous train acc: {checkpoint.get('train_acc', 'N/A'):.2f}%")
@@ -174,7 +174,7 @@ def save_checkpoint(checkpoint_dir, epoch, model, optimizer, train_loss, valid_l
         'valid_acc': valid_acc
     }, checkpoint_path)
     
-    print(f"💾 Checkpoint saved: {checkpoint_path}")
+    print(f" Checkpoint saved: {checkpoint_path}")
 
 # ============================================================
 # TRAINING SETUP
@@ -313,7 +313,7 @@ for epoch in range(start_epoch + 1, opt.num_epochs + 1):
     scheduler.step(valid_loss)
     
     # Print epoch summary
-    print(f"\n📊 Epoch {epoch} Summary:")
+    print(f"\n Epoch {epoch} Summary:")
     print(f"   Train Loss: {train_loss:.5f} | Train Acc: {train_acc:.2f}%")
     print(f"   Valid Loss: {valid_loss:.5f} | Valid Acc: {valid_acc:.2f}%")
     print(f"   Learning Rate: {optimizer.param_groups[0]['lr']:.6f}")
@@ -331,7 +331,7 @@ for epoch in range(start_epoch + 1, opt.num_epochs + 1):
     )
 
 print("\n" + "="*60)
-print("✅ TRAINING COMPLETED!")
+print(" TRAINING COMPLETED!")
 print("="*60)
 print(f"Finished at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 print(f"All checkpoints saved in: {opt.checkpoints_dir}")

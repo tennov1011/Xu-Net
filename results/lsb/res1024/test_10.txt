@@ -1,0 +1,25 @@
+==================================================
+TEST RESULTS - ./results\lsb\res1024\test_10.txt
+==================================================
+Resolution      : res1024
+Checkpoint      : ./checkpoints/res1024\net_10.pt
+Cover path      : ./dataset/lsb/res1024/cover/test
+Stego path      : ./dataset/lsb/res1024/stego/test
+Test size       : 40
+Batch size      : 10
+Color mode      : RGB
+Device          : cpu
+
+==================================================
+Test Accuracy   : 93.75%
+==================================================
+
+Confusion Matrix:
+True Positive  (Stego->Stego) : 39
+True Negative  (Cover->Cover) : 36
+False Positive (Cover->Stego) : 4
+False Negative (Stego->Cover) : 1
+
+Accuracy  : 93.75%
+Precision : 90.70%
+Recall    : 97.50%

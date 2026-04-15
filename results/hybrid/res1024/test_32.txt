@@ -1,0 +1,25 @@
+==================================================
+TEST RESULTS - ./results\hybrid\res1024\test_32.txt
+==================================================
+Resolution      : res1024
+Checkpoint      : ./checkpoints/res1024\net_32.pt
+Cover path      : ./dataset/hybrid/res1024/cover/test
+Stego path      : ./dataset/hybrid/res1024/stego/test
+Test size       : 40
+Batch size      : 10
+Color mode      : RGB
+Device          : cpu
+
+==================================================
+Test Accuracy   : 91.25%
+==================================================
+
+Confusion Matrix:
+True Positive  (Stego->Stego) : 37
+True Negative  (Cover->Cover) : 36
+False Positive (Cover->Stego) : 4
+False Negative (Stego->Cover) : 3
+
+Accuracy  : 91.25%
+Precision : 90.24%
+Recall    : 92.50%

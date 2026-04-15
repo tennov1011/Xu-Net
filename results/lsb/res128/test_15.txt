@@ -1,0 +1,25 @@
+==================================================
+TEST RESULTS - ./results\lsb\res128\test_15.txt
+==================================================
+Resolution      : res128
+Checkpoint      : ./checkpoints/res128\net_15.pt
+Cover path      : ./dataset/lsb/res128/cover/test
+Stego path      : ./dataset/lsb/res128/stego/test
+Test size       : 40
+Batch size      : 10
+Color mode      : RGB
+Device          : cpu
+
+==================================================
+Test Accuracy   : 88.75%
+==================================================
+
+Confusion Matrix:
+True Positive  (Stego->Stego) : 33
+True Negative  (Cover->Cover) : 38
+False Positive (Cover->Stego) : 2
+False Negative (Stego->Cover) : 7
+
+Accuracy  : 88.75%
+Precision : 94.29%
+Recall    : 82.50%

@@ -1,0 +1,25 @@
+==================================================
+TEST RESULTS - ./results\hybrid\res512\test_38.txt
+==================================================
+Resolution      : res512
+Checkpoint      : ./checkpoints/res512\net_38.pt
+Cover path      : ./dataset/hybrid/res512/cover/test
+Stego path      : ./dataset/hybrid/res512/stego/test
+Test size       : 40
+Batch size      : 10
+Color mode      : RGB
+Device          : cpu
+
+==================================================
+Test Accuracy   : 80.00%
+==================================================
+
+Confusion Matrix:
+True Positive  (Stego->Stego) : 34
+True Negative  (Cover->Cover) : 30
+False Positive (Cover->Stego) : 10
+False Negative (Stego->Cover) : 6
+
+Accuracy  : 80.00%
+Precision : 77.27%
+Recall    : 85.00%
